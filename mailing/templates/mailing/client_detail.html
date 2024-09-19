@@ -1,0 +1,41 @@
+{% extends 'mailing/base.html' %}
+{% block content %}
+<div class="col-12">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Информация клиента
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <td>Расширение</td>
+                            <td>Расширение</td>
+                        </tr>
+                        <tr>
+                            <td>Почта</td>
+                            <td> {{object.client_email}} </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Описание
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <p> {{object.description}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

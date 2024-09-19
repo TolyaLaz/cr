@@ -1,0 +1,32 @@
+{% extends 'mailing/base.html' %}
+{% block content %}
+<main>
+    <div class="row text-center">
+        <div class="col-12">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h5 class="my-0 font-weight-normal">Рассылка номер {{ object.pk }}</h5>
+                    <h3 class="my-0 font-weight-normal">{{ object.mailing_name }}</h3>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">{{ object.status }}</h1>
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li>- {{ object.description }}</li>
+                        <li>- периодичность рассылки: {{ object.period }}</li>
+                        <li>- начало рассылки: {{ object.first_send_date_time }}</li>
+                        <li>- конец рассылки: {{ object.last_send_date_time }}</li>
+                        <li>- участники рассылки: {% for client_item in object.clients.all %}</li>
+                        {{ client_item.client_email }}
+                        {% endfor %}
+                    </ul>
+
+                    <div class="btn-group">
+                        <a href="{% url 'mailing:mailing_list' %}" type="button"
+                           class="btn btn-lg btn-block btn-outline-primary">Назад</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
