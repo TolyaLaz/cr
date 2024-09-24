@@ -43,6 +43,8 @@
                                href="{% url 'mailing:message_list' %}">Сообщения</a></li>
                         <li><a class="py-2 link-body-emphasis text-decoration-none"
                                href="{% url 'mailing:message_form' %}">Создать сообщение</a></li>
+                        <li><a class="py-2 link-body-emphasis text-decoration-none"
+                               href="{% url 'blog:blog_list' %}">Статьи</a></li>
                         {% else %}
                         <li><a class="me-3 py-2 link-body-emphasis text-decoration-none"
                                href="{% url 'users:login' %}">Вход</a></li>
